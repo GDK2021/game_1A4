@@ -1,0 +1,50 @@
+Quelle est la couleur du ciel ?
+1- Bleu
+2- Vert
+3- Rouge
+1
+Combien de doigts a une main ?
+1- 4
+2- 5
+3- 6
+2
+Quel est le symbole chimique de l'eau ?
+1- H2O
+2- O2
+3- CO2
+1
+Quelle est la capitale de la France ?
+1- Paris
+2- Lyon
+3- Marseille
+1
+Quel animal dit "miaou" ?
+1- Chat
+2- Chien
+3- Vache
+1
+Quel est le resultat de 2+2 ?
+1- 3
+2- 4
+3- 5
+2
+Quelle est la planete rouge ?
+1- Mars
+2- Venus
+3- Jupiter
+1
+Quel est le contraire de chaud ?
+1- Froid
+2- Doux
+3- Humide
+1
+Combien de cotes a un triangle ?
+1- 3
+2- 4
+3- 5
+1
+Quelle est la saison apres l'ete ?
+1- Automne
+2- Printemps
+3- Hiver
+1
