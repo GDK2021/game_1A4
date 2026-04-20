@@ -82,14 +82,18 @@ void gestion_event(app *app, int *x, int *y)
     }
 
     // Single event loop — always runs
-    while (SDL_PollEvent(&app->event))
+   while (SDL_PollEvent(&app->event))
+{
+    if (app->event.type == SDL_QUIT)
+        app->running = 0;
+
+    if (app->event.type == SDL_KEYDOWN)
     {
-        if (app->event.type == SDL_QUIT)
-            app->running = 0;
-
-    
+        if (app->event.key.keysym.sym == SDLK_g)
+        {
+            lancer_enigme(app);
+        }
     }
-
 }
 
 

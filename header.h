@@ -4,6 +4,15 @@
 #include <SDL2/SDL_mixer.h>
 #include <SDL2/SDL_ttf.h>
 #define HEADER_H_INCLUDED
+#define MAX_QUESTIONS 50
+#define TEMPS_MAX 5000
+
+typedef struct {
+    char question[200];
+    char rep[3][100];
+    int bonne_rep;
+    int deja_vu;
+} Enigme;
 typedef struct{
   SDL_Texture *move_d [3];
   SDL_Texture *move_g [3];
@@ -79,7 +88,12 @@ typedef struct{
 
 
 
-
+int chargerEnigmes(Enigme t[], int max, char *nomFichier);
+void afficherTexte(SDL_Renderer *renderer, char *texte, int x, int y, TTF_Font *font, SDL_Color color);
+void afficherEnigme(SDL_Renderer *renderer, Enigme e, TTF_Font *font);
+int verifier(Enigme e, int choix);
+int aleatoire(int max);
+void lancer_enigme(app *app);
 
 void SDL_Exitwitherror(const char *msg);
 void quitter(app* app);
