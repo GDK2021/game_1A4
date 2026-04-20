@@ -67,31 +67,30 @@ void initialisation(app *app)
         SDL_Exitwitherror("Erreur image");
 }
 
-void gestion_event(app *app, int *x, int *y)
+void gestion_event(app *app)
 {
     int attacking = (app->p1.state == attacking_L || app->p1.state == attacking_R);
 
-    // Check if attack animation is done
     if (attacking)
     {
         if (SDL_GetTicks() - app->p1.move_ticks >= 300)
         {
             app->p1.state = standing;
-            app->p1.last_attack_time = SDL_GetTicks(); // cooldown starts here
+            app->p1.last_attack_time = SDL_GetTicks();
         }
     }
 
-    // Single event loop — always runs
-   while (SDL_PollEvent(&app->event))
-{
-    if (app->event.type == SDL_QUIT)
-        app->running = 0;
-
-    if (app->event.type == SDL_KEYDOWN)
+    while (SDL_PollEvent(&app->event))
     {
-        if (app->event.key.keysym.sym == SDLK_g)
+        if (app->event.type == SDL_QUIT)
+            app->running = 0;
+
+        if (app->event.type == SDL_KEYDOWN)
         {
-            lancer_enigme(app);
+            if (app->event.key.keysym.sym == SDLK_g)
+            {
+                lancer_enigme(app);
+            }
         }
     }
 }
