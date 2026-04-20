@@ -15,33 +15,28 @@ int main(int argc, char *argv[])
     app app = {0};
     initialisation(&app);
     creation_joueur(&app);
+
+    /* ── Player 1 init ── */
     app.p1.health.amount = 3;
-    app.p1.state=standing;
-    app.ticks = 0;
-    app.p1.laststate = walking_R;
+    app.p1.state         = standing;
+    app.p1.laststate     = walking_R;
+    app.ticks            = 0;
+
+    /* ── Player 2 (spawns on M key press) ── */
+    app.p2_active = 0;
+    app.ticks2    = 0;
+
     app.running = 1;
-    // Mix_PlayChannel(-1, app.son, 0);
-    //  Coordonnées souris
+
     int x = 0, y = 0;
-    // ==============================
-    // Boucle principale
-    // ==============================
 
     while (app.running)
     {
-
-        // ==============================
-        // Gestion des événements
-        // ==============================
-
         gestion_event(&app, &x, &y);
-
         affichage(&app, x, y);
         SDL_Delay(16);
     }
 
-    // quitter(&app);
     SDL_Quit();
-
     return 0;
 }

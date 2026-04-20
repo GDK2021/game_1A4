@@ -65,16 +65,15 @@ typedef struct{
 
 typedef struct{
   int ticks;
+  int ticks2;           /* separate double-tap timer for p2 */
   SDL_Window *window ;
   SDL_Renderer *renderer ;
   SDL_Event event;
   player p1;
+  player p2;            /* second player */
+  int p2_active;        /* 0 = not spawned yet, 1 = active */
   int running;
 }app;
-
-
-
-
 
 
 void SDL_Exitwitherror(const char *msg);
@@ -82,9 +81,14 @@ void quitter(app* app);
 void affichage(app* app, int x, int y);
 void gestion_event(app* app,int* x, int* y);
 void creation_joueur(app *app);
+void creation_joueur2(app *app);
 void initialisation(app* app);
 void afficher_perso(app* app);
+void afficher_perso2(app* app);
 void afficher_vie(app* app);
+void afficher_vie2(app* app);
 void saut(app *app);
+void saut2(app *app);
 void loadtexture(app *app, const char *framename, SDL_Texture *(*dest)[3]);
+void loadtexture2(app *app, const char *framename, SDL_Texture *(*dest)[3]);
 #endif // HEADER_H_INCLUDED
