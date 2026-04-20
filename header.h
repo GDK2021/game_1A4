@@ -1,8 +1,4 @@
 #ifndef HEADER_H_INCLUDED
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_mixer.h>
-#include <SDL2/SDL_ttf.h>
 #define HEADER_H_INCLUDED
 typedef struct{
   SDL_Texture *move_d [3];
@@ -83,12 +79,12 @@ typedef struct{
 
 void SDL_Exitwitherror(const char *msg);
 void quitter(app* app);
-void affichage(app* app);
-void gestion_event(app* app);
+void affichage(app* app, int x, int y);
+void gestion_event(app* app,int* x, int* y);
 void creation_joueur(app *app);
 void initialisation(app* app);
 void afficher_perso(app* app);
 void afficher_vie(app* app);
 void saut(app *app);
-void loadtexture(app *app, char framename [50] );
+void loadtexture(app *app, const char *framename, SDL_Texture *(*dest)[3]);
 #endif // HEADER_H_INCLUDED

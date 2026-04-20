@@ -1,0 +1,33 @@
+# --- Exécutables et fichiers objets ---
+*.o
+*.obj
+*.out
+*.exe
+*.app
+
+# --- Dossiers de build (si tu en utilises) ---
+bin/
+obj/
+build/
+
+# --- Bibliothèques (statiques et dynamiques) ---
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+
+# --- Fichiers de débogage ---
+*.dSYM/
+*.pdb
+
+# --- Fichiers temporaires d'éditeurs (VS Code, Vim, etc.) ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# --- Fichiers de log ---
+*.log
